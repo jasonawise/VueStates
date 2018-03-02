@@ -15,47 +15,30 @@
     <title>Vue States</title>
 </head>
 <body>
-    <!-- <div id="app-7">
+    <div id="app-7">
         <label class="so" for="state">State</label>
-            <state-item :options='stateList'></state-item>
-    </div> -->
+        <state-dropdown :options='list'></state-dropdown>
+    </div>
     <div id="app">
         <div><label>Active</label>
         <active-dropdown :options='blah'></active-dropdown>
     </div>
 </body>
 <script>
-    // Vue.component('state-item', {
-    //     props: ['states'],
-    //     // template: '<option>{{state.aprev}} {{ state.text }}</option>'
-    //     template: ' <select id="state" class="form-control" name="state"> <option v-for="state in states">{{ state.text }}</option> </select>'
-    // })
+    Vue.component('state-dropdown', {
+        template: ' <select id="state" class="form-control" name="state"> <option v-for="option in options" v-bind:value="option.abbr" >{{ option.text }}</option> </select>',
+        props: ['options']
+    })
 
-    // new Vue({
-    // el: '#app-7',
-    // data: {
-    //     stateList: [
-    //         { text: 'Alabama'},
-    //         { text: 'North Carolina'}
-    //     ]
-    // }
-    // })
-    Vue.component('active-dropdown', {
-  template: ' <select><option v-for="option in options">{{ option.text }}</option></select>',
-  props: ['options'],
-});
-
-new Vue({
-  el: '#app',
-  data: {
-    blah: [
-    {text: 'foo'},
-    {text: 'bar'},
-    {text: 'baz'}
-    ],
-  }
-})
-
+    new Vue({
+    el: '#app-7',
+    data: {
+        list: [
+            { abbr: 'AL', text: 'Alabama'},
+            { abbr: 'NC', text: 'North Carolina'}
+        ]
+    }
+    })
 </script>
 
 </html>
