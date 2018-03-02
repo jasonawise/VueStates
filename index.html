@@ -16,13 +16,19 @@
 </head>
 <body>
     <div id="app-7">
-        <label class="so" for="state">State</label>
-        <select id="state" class="form-control" name="state">
-                <state-item
-                v-for="item in stateList"
-                v-bind:state="item">
-                </state-item>
-        </select>
+        <ol>
+            <!--
+            Now we provide each todo-item with the todo object
+            it's representing, so that its content can be dynamic.
+            We also need to provide each component with a "key",
+            which will be explained later.
+            -->
+            <state-item
+            v-for="item in stateList"
+            v-bind:state="item"
+                            >
+            </state-item>
+        </ol>
     </div>
 </body>
 <script>
