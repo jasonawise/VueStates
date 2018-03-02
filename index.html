@@ -15,13 +15,9 @@
     <title>Vue States</title>
 </head>
 <body>
-    <div id="app-7">
+    <div id="app">
         <label class="so" for="state">State</label>
         <state-dropdown :options='list'></state-dropdown>
-    </div>
-    <div id="app">
-        <div><label>Active</label>
-        <active-dropdown :options='blah'></active-dropdown>
     </div>
 </body>
 <script>
@@ -31,7 +27,7 @@
     })
 
     new Vue({
-    el: '#app-7',
+    el: '#app',
     data: {
         list: [
             { abbr: 'AL', text: 'Alabama'},
